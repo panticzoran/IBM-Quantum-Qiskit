@@ -4,10 +4,10 @@ Here you may find the instructions on how to set up the environment
 The "machine" is the "local machine" on Replit (https://replit.com) where a Repl is created
 The below info is pertaining to installment on Replit, for more info see https://docs.quantum.ibm.com/start/install
 
+1. Make sure that you have Python installed
+    To verify, open shell and type "python" - that should give you the Python version
 
-
-
-
-
-
+2. Use virtual environment to separate Qiskit from other applications (in this example, the environment name is "qickig-env", you may chose your own)
+    python -m venv qiskit-env
+    source qiskit-env/bin/activate
 
