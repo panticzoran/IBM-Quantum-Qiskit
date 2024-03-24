@@ -8,6 +8,11 @@ The below info is pertaining to installment on Replit, for more info see https:/
     To verify, open shell and type "python" - that should give you the Python version
 
 2. Use virtual environment to separate Qiskit from other applications (in this example, the environment name is "qickig-env", you may chose your own)
-    python -m venv qiskit-env
-    source qiskit-env/bin/activate
+    python -m venv qiskit-env    #install the virtual environment
+    source qiskit-env/bin/activate  #activate your virtual environment
 
+3. Use the Jupyter development environment to interact with Qiskit
+    pip install jupyterlab  #installing the JyputerLab
+    # Make sure that you have exited the virtual environment with "exit" before installing, otherwise you will get "ERROR: Can not perform a '--user' install. User site-packages are not visible in this virtualenv."
+    jupyter lab  #launching the JupyterLab
+    
