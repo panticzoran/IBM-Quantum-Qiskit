@@ -4,15 +4,31 @@ Here you may find the instructions on how to set up the environment
 The "machine" is the "local machine" on Replit (https://replit.com) where a Repl is created
 The below info is pertaining to installment on Replit, for more info see https://docs.quantum.ibm.com/start/install
 
-1. Make sure that you have Python installed
+1. Make sure that you have Python and pip installed
     To verify, open shell and type "python" - that should give you the Python version
+    python -m ensurepip --upgrade    # This would give error in Replit, but pip is installed by default, so no need for this extra step
+                                    # You can run "pip list" to see the active packages in your virtual environment
 
-2. Use virtual environment to separate Qiskit from other applications (in this example, the environment name is "qickig-env", you may chose your own)
+2. You may use virtual environment to separate Qiskit from other applications (in this example, the environment name is "qickig-env", you may chose your own)
     python -m venv qiskit-env    #install the virtual environment
     source qiskit-env/bin/activate  #activate your virtual environment
+    # after activation, the prompt in your shell is prefixed with the environment's name, and you can follow the below steps from there, and everything will be applied to this virtual environment
+    # as the "machine" is a repl in Replit, I chose not to work inside of this virtual environment, as the whole "machine" is reserved for Qiskit purpose solely
 
 3. Use the Jupyter development environment to interact with Qiskit
     pip install jupyterlab  #installing the JyputerLab
-    # Make sure that you have exited the virtual environment with "exit" before installing, otherwise you will get "ERROR: Can not perform a '--user' install. User site-packages are not visible in this virtualenv."
+      # Make sure that you have exited the virtual environment with "exit" before installing, otherwise you will get "ERROR: Can not perform a '--user' install. User site-packages are not visible in this virtualenv."
     jupyter lab  #launching the JupyterLab
-    
+      # After this, a confirmation that Jupyter Server is running will be displayed, with some access info
+
+4. Install Qiskit
+    pip install qiskit
+    pip install qiskit-ibm-runtime
+
+5.    We will use visualization functionality / Jupyter notebooks, so it is recommended to install Qiskit with the extra visualization support:
+    pip install qiskit[visualization]
+
+What is done until now is enough if you are planning to work locally (on the repl) and use simulators built into Qiskit. 
+
+We would also want to run jobs on IBM Quantum systems, and therefore we should set up the access channel, IBM Quantum Lab or Composer https://lab.quantum.ibm.com (you will need a account for that, and there is a free tier)
+
