@@ -1,4 +1,4 @@
-Here you may find the instructions on how to set up the environment
+Here you may find the instructions on how to set up your environment, using Replit and IBM Quantum Platform
 
 
 The "machine" is the "local machine" on Replit (https://replit.com) where a Repl is created
@@ -30,5 +30,8 @@ The below info is pertaining to installment on Replit, for more info see https:/
 
 What is done until now is enough if you are planning to work locally (on the repl) and use simulators built into Qiskit. 
 
-We would also want to run jobs on IBM Quantum systems, and therefore we should set up the access channel, IBM Quantum Lab or Composer https://lab.quantum.ibm.com (you will need a account for that, and there is a free tier)
+We would also want to run jobs on IBM Quantum systems, and therefore we should set up the access channel, IBM Quantum Lab or Composer https://lab.quantum.ibm.com - you will need a account for that, and there is a free tier.
+
+After that, you will use your access token (which is generated for you as an user on the IBM Quantum Platform) in your code, to work with the resources on IBM Quantum Platform.
+To maintain the security, use "Secrets" in Replit to safely store your access token.
 
