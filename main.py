@@ -1,13 +1,22 @@
-# Simple test that connets IBM Quantum infrastructure via the access channel using your 
-# credentials, and prints the Qiskit version
+# This quantum "Hello world" example is a simple quantum program that creates a circuit
+# which produces a Bell state, a specific two-qubit entangled state.
 
-import os
+from qiskit import QuantumCircuit
+from qiskit.quantum_info import SparsePauliOp
+from qiskit.transpiler.preset_passmanagers import generate_preset_pass_manager
+from qiskit_ibm_runtime import QiskitRuntimeService, EstimatorV2 as Estimator
 
-import qiskit
-from qiskit_ibm_runtime import QiskitRuntimeService
+# Create a new circuit with two qubits (first argument) and two classical
+# bits (second argument)
+qc = QuantumCircuit(2)
 
-service = QiskitRuntimeService(channel = "ibm_quantum", 
-                               token =  os.environ['IBM_ACCESS_TOKEN'])
+# Add a Hadamard gate to qubit 0
+qc.h(0)
 
-# Prints out the Qiskit version
-print(qiskit.__version__)
+# Perform a controlled-X gate on qubit 1, controlled by qubit 0
+qc.cx(0, 1)
+
+# Return a drawing of the circuit using MatPlotLib ("mpl"). This is the
+# last line of the cell, so the drawing appears in the cell output.
+# Remove the "mpl" argument to get a text drawing.
+qc.draw("mpl")
